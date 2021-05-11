@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Scenes.GUI;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,8 +11,6 @@ public class GameManager : MonoBehaviour
     public static Vector2 WallLeft1;
     public static Vector2 WallRight;
     public static Vector2 WallRight1;
-
-    
 
     void OnGUI()
     {

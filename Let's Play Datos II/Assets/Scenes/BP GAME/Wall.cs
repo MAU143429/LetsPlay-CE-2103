@@ -28,11 +28,13 @@ public class Wall : MonoBehaviour
 
             if (wallpos == 1)
             {
-                pos = new Vector2(GameManager.WallRight.x, 3);
+                pos = new Vector2(10, 3);
+                
             }
+
             else if (wallpos == 2)
             {
-                pos = new Vector2(GameManager.WallRight1.x, -3);
+                pos = new Vector2(10, -3);
             }
             
         }
@@ -41,11 +43,11 @@ public class Wall : MonoBehaviour
 
             if (wallpos == 3)
             {
-                pos = new Vector2(GameManager.WallLeft.x, 3);
+                pos = new Vector2(-10, 3);
             }
             else if (wallpos == 4)
             {
-                pos = new Vector2(GameManager.WallLeft1.x, -3);
+                pos = new Vector2(-10, -3);
             }
             
 
