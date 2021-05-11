@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public Ball ball;
     public Wall wall;
-    public Wall2 upwall;
+    
     public static Vector2 WallLeft;
     public static Vector2 WallLeft1;
     public static Vector2 WallRight;
@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
 
         Instantiate(ball);
-        Instantiate(upwall);
+        
 
         Wall wall1 = Instantiate(wall) as Wall;
         Wall wall2 = Instantiate(wall) as Wall;
