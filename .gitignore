@@ -436,9 +436,17 @@ ExportedObj/
 *.csproj
 *.unityproj
 *.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
 *.booproj
 *.svd
+*.pdb
 *.mdb
+*.opendb
+*.VC.db
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -450,6 +458,7 @@ sysinfo.txt
 
 # Builds
 *.apk
+*.aab
 *.unitypackage
 
 # Crashlytics generated file
@@ -459,6 +468,13 @@ crashlytics-build.properties
 InitTestScene*.unity.meta
 InitTestScene*.unity
 
+# Packed Addressables
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/*/*.bin*
+
+# Temporary auto-generated Android Assets
+/[Aa]ssets/[Ss]treamingAssets/aa.meta
+/[Aa]ssets/[Ss]treamingAssets/aa/*
+Server/
 
 ### VisualStudioCode ###
 .vscode/*
