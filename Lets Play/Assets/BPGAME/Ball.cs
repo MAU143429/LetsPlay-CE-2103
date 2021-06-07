@@ -5,68 +5,112 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     [SerializeField]
-    float speed;
-
+    static float speed;
     float radius;
-    Vector2 direction;
+    public static Vector2 balldirection;
+    static Vector2 initial_direction = new Vector2(0,0);
 
     // Start is called before the first frame update
     void Start()
     {
-        direction = Vector2.one.normalized;
+        balldirection = Vector2.one.normalized;
         radius = transform.localScale.x / 2;
+       
+
+
     }
+
+    public void Hit_ball()
+    {
+       
+        speed = GameManager.force;
+        balldirection = GameManager.Arrow;
+        Turns.current_player();
+    }
+
+    public static float getSpeed()
+    {
+        return speed;
+    }
+
+
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
-
-        if (transform.position.y < GameManager.WallLeft.y + radius && direction.y < 0)
+        if (Input.GetKeyDown("s"))
         {
-            direction.y = -direction.y;
+            speed = 0;
         }
 
-        if (transform.position.y < GameManager.WallLeft1.y + radius && direction.y < 0)
+
+        // Asigna la posicion general y da movimiento.
+        GameManager.Ball = transform.position;
+        transform.Translate(balldirection * speed * Time.deltaTime);
+        GameManager.ballspeed = speed;
+
+
+        // Hitbox superior
+        if (transform.position.y < GameManager.WallLeft.y + radius + 0.6 && balldirection.y < 0)
         {
-            direction.y = -direction.y;
+            balldirection.y = -balldirection.y;
+            if (speed < 1)
+            {
+                speed = 0f;
+            }
+            else
+            {
+                speed -= 1f;
+            }
+        }
+        // Hitbox inferior
+        if (transform.position.y > GameManager.WallRight.y - radius - 0.5 && balldirection.y > 0)
+        {
+            balldirection.y = -balldirection.y;
+            if (speed < 1)
+            {
+                speed = 0f;
+            }
+            else
+            {
+                speed -= 1f;
+            }
         }
 
-        if (transform.position.y > GameManager.WallRight.y - radius && direction.y > 0)
+        // Detecta gol del lado izquierdo
+        if (transform.position.x < GameManager.WallLeft.x + radius + 0.1 && balldirection.x < 0)
         {
-            direction.y = -direction.y;
-        }
-        if (transform.position.y > GameManager.WallRight1.y - radius && direction.y > 0)
-        {
-            direction.y = -direction.y;
-        }
-
-        // prueba muro 
-        
-        if (transform.position.x < GameManager.WallUp.x + radius && direction.x < 0)
-        {
-            direction.x = -direction.x;
-        }
-
-        if (transform.position.x < GameManager.WallDown.x + radius && direction.x < 0)
-        {
-            direction.x = -direction.x;
-        }
-        //
-
-        if (transform.position.x < GameManager.WallLeft.x + radius && direction.x < 0)
-        {
+            transform.position = new Vector2(0, 0);
+            speed = 0;
+            m2.scoreUpdate2();
             Debug.Log("GOAL RIGHT PLAYER WINS!");
-            Time.timeScale = 0;
-        }
 
-        if (transform.position.x > GameManager.WallRight.x - radius && direction.x > 0)
+            
+        }
+        // Detecta gol del lado derecho
+        if (transform.position.x > GameManager.WallRight.x - radius - 0.1 && balldirection.x > 0)
         {
+            transform.position = new Vector2(0, 0);
+            speed = 0;
+            m1.scoreUpdate1();
             Debug.Log("GOAL LEFT PLAYER WINS!");
-            Time.timeScale = 0;
+            
         }
 
+        
+        /**
+       
+        if (transform.position.y < GameManager.WallLeft1.y + radius && balldirection.y < 0)
+        {
+            balldirection.y = -balldirection.y;
+        }
 
+        
+        if (transform.position.y > GameManager.WallRight1.y - radius && balldirection.y > 0)
+        {
+            balldirection.y = -balldirection.y;
+        }
+        */
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -74,26 +118,33 @@ public class Ball : MonoBehaviour
         if (other.tag == "Wall")
         {
             bool isRight = other.GetComponent<Wall>().isRight;
-            bool isUp = other.GetComponent<Wallv2>().isUp;
 
-            if (isRight && direction.x > 0)
+            if (isRight && balldirection.x > 0)
             {
-                direction.x = -direction.x;
+                balldirection.x = -balldirection.x;
+                if(speed < 1)
+                {
+                    speed = 0f;
+                }
+                else
+                {
+                    speed -= 1f;
+                }
+                
             }
 
-            if (!isRight && direction.x < 0)
+            if (!isRight && balldirection.x < 0)
             {
-                direction.x = -direction.x;
-            }
+                balldirection.x = -balldirection.x;
+                if (speed < 1)
+                {
+                    speed = 0f;
+                }
+                else
+                {
+                    speed -= 1f;
+                }
 
-            if (isUp && direction.y > 0)
-            {
-                direction.y = -direction.y;
-            }
-
-            if (!isUp && direction.y < 0)
-            {
-                direction.y = -direction.y;
             }
         }
     }

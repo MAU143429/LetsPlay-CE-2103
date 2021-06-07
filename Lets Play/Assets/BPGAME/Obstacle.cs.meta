@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 7b07d1df16d82da49b59962e395a1b48
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - obs1: {fileID: 7583004541638406082, guid: 8f79c23eecb343e40a394b80cd034518, type: 3}
+  - obs2: {fileID: -1567667009543116299, guid: c6b8a1441e2143445ade3f3361206db0, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

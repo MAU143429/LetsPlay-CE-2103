@@ -9,7 +9,7 @@ public class Wall : MonoBehaviour
 
     string input;
     public bool isRight;
-    public bool isUp = false;
+    
 
 
     // Start is called before the first frame update
@@ -29,19 +29,11 @@ public class Wall : MonoBehaviour
 
             if (wallpos == 1)
             {
-                pos = new Vector2(10, 3);
+                pos = new Vector2(8.50f, 3);
             }
             else if (wallpos == 2)
             {
-                pos = new Vector2(10, -3);
-            }
-            else if (wallpos == 5)
-            {
-                pos = new Vector2(0, -5);
-            }
-            else if (wallpos == 6)
-            {
-                pos = new Vector2(0, 5);
+                pos = new Vector2(8.50f, -3);
             }
 
         }
@@ -50,14 +42,12 @@ public class Wall : MonoBehaviour
 
             if (wallpos == 3)
             {
-                pos = new Vector2(-10, 3);
+                pos = new Vector2(-8.50f, 3);
             }
             else if (wallpos == 4)
             {
-                pos = new Vector2(-10, -3);
+                pos = new Vector2(-8.50f, -3);
             }
-
-
         }
 
         transform.position = pos;

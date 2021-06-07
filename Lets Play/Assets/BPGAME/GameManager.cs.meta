@@ -3,7 +3,14 @@ guid: f204a346382badf48b62d8069367c441
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ball: {fileID: 2618401499034767400, guid: 036fc608d86c702468295e4904bdf26f, type: 3}
+  - wall: {fileID: 5710273283681533840, guid: 0ed70e883b3049c4cbac181047564131, type: 3}
+  - arrow: {fileID: 728452438738066125, guid: 6c9c6ba455b79784a8381a36cbba1694, type: 3}
+  - ball2: {fileID: -1807429930049557029, guid: 6b957edbe4e90c04eb9f230d33992a1d, type: 3}
+  - turn: {fileID: 212883082333552703, guid: 32ab1c4dff71fd547b8b5a2e178e66c1, type: 3}
+  - obs1: {fileID: 7583004541638406082, guid: 8f79c23eecb343e40a394b80cd034518, type: 3}
+  - obs2: {fileID: -1567667009543116299, guid: c6b8a1441e2143445ade3f3361206db0, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
