@@ -65,14 +65,14 @@ public class Bp_matrix
         {
             for (int j = 0; j < COLS; j++)
             {
-                Debug.Log("LA POSICION DE LA BOLA EN X DEBE ESTAR ENTRE  " + (bp_matrix[i][j].posx - halfx) + " Y " + (bp_matrix[i][j].posx + halfx)
-                 + " Y EN LA Y ENTRE "+ (bp_matrix[i][j].posy - halfy) + " Y " + (bp_matrix[i][j].posy + halfy));
+               
+                 
                 if( (ball_positionx > (bp_matrix[i][j].posx - halfx)) && (ball_positionx < (bp_matrix[i][j].posx + halfx)) &&
                     (ball_positiony > (bp_matrix[i][j].posy - halfy)) && (ball_positiony < (bp_matrix[i][j].posy + halfy)))
                 {
                     cell_x = bp_matrix[i][j].i;
                     cell_y = bp_matrix[i][j].j;
-                    Debug.Log("LA BOLA SE ENCUENTREA EN LA POSICION  X= " + cell_x + " Y = " + cell_y);
+                    
                     
 
                 }
@@ -80,18 +80,10 @@ public class Bp_matrix
                     
             }
         }
-        Debug.Log("LA BOLA SE ENCUENTREA EN LA POSICION  X= " + cell_x + " Y = " + cell_y);
+        
         
     }
    
-
-
-    
-
-
-
-
-
 
 
 }

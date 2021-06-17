@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public static List<Obstacle> List_p1 = new List<Obstacle>();
     public static List<Obstacle> List_p2 = new List<Obstacle>();
     public static List<Ball2> List_balls = new List<Ball2>();
+    public static bool Init_Turn;
 
 
     public static Vector2 WallLeft;
@@ -203,6 +204,7 @@ public class GameManager : MonoBehaviour
         wall3.Init(false, 3);
         wall4.Init(false, 4);
 
+        Init_Turn = true;
          
 
     }
@@ -212,7 +214,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //End_Game();
+        End_Game();
         
        
     }
@@ -230,13 +232,21 @@ public class GameManager : MonoBehaviour
 
 
         }
-        else if ((m2.score2 - 1) == TotalGoals.totalgoals && EditorUtility.DisplayDialog("RESULTADO DE LA PARTIDA",
-                "EL JUGADOR 2 HA GA" +
-                "NADO", "OK", "CANCEL"))
+        else if ((m2.score2 - 1) == TotalGoals.totalgoals)
         {
-
-            m2.score2 = 0;
-            MainMenu.RestartBPGAME();
+            if (StartGameBP.hasAi == true && EditorUtility.DisplayDialog("RESULTADO DE LA PARTIDA",
+                "EL AI HA GANADO", "OK", "CANCEL"))
+            {
+                m2.score2 = 0;
+                MainMenu.RestartBPGAME();
+            }
+            else if(EditorUtility.DisplayDialog("RESULTADO DE LA PARTIDA",
+                "EL JUGADOR 2 HA GANADO", "OK", "CANCEL"))
+            {
+                m2.score2 = 0;
+                MainMenu.RestartBPGAME();
+            }
+            
 
         }
     }

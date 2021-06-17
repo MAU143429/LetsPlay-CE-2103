@@ -9,7 +9,7 @@ public class Select_Game
     {
         if(response.Game == "BPGAME")
         {
-            Debug.Log("SOY LA RESPUESTA DEL SERVER Y VOY PARA EL CONTROLLER DE BPGAME");
+          
             bp_manager.Game_bp(response);
         }
         else

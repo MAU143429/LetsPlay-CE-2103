@@ -69,6 +69,7 @@
     <Compile Include="Assets\GUI\DropDown.cs" />
     <Compile Include="Assets\GUI\StartGameBP.cs" />
     <Compile Include="Assets\BPGAME\bp_manager.cs" />
+    <Compile Include="Assets\BPGAME\AstarManager.cs" />
     <Compile Include="Assets\BPGAME\Force.cs" />
     <Compile Include="Assets\Scripts\bp_box.cs" />
     <Compile Include="Assets\Scripts\Box_R.cs" />
@@ -81,7 +82,6 @@
     <Compile Include="Assets\Scripts\Bp_matrix.cs" />
     <Compile Include="Assets\BPGAME\Ball.cs" />
     <Compile Include="Assets\BPGAME\Hit.cs" />
-    <Compile Include="Assets\BPGAME\AstarManager.cs" />
   </ItemGroup>
   <ItemGroup>
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

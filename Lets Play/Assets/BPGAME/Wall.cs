@@ -29,11 +29,11 @@ public class Wall : MonoBehaviour
 
             if (wallpos == 1)
             {
-                pos = new Vector2(8.50f, 3);
+                pos = new Vector2(9.00f, 3);
             }
             else if (wallpos == 2)
             {
-                pos = new Vector2(8.50f, -3);
+                pos = new Vector2(9.00f, -3);
             }
 
         }
@@ -42,11 +42,11 @@ public class Wall : MonoBehaviour
 
             if (wallpos == 3)
             {
-                pos = new Vector2(-8.50f, 3);
+                pos = new Vector2(-9.00f, 3);
             }
             else if (wallpos == 4)
             {
-                pos = new Vector2(-8.50f, -3);
+                pos = new Vector2(-9.00f, -3);
             }
         }
 
@@ -56,7 +56,7 @@ public class Wall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }
 

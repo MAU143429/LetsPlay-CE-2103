@@ -33,6 +33,12 @@ public class Ball : MonoBehaviour
         return speed;
     }
 
+    public static void Auto_Hit()
+    {
+        speed = 2f;
+        balldirection = Arrow.ai_direction;
+    }
+
 
 
     // Update is called once per frame
@@ -83,6 +89,7 @@ public class Ball : MonoBehaviour
             transform.position = new Vector2(0, 0);
             speed = 0;
             m2.scoreUpdate2();
+            Turns.Restart();
             Debug.Log("GOAL RIGHT PLAYER WINS!");
 
             
@@ -93,6 +100,7 @@ public class Ball : MonoBehaviour
             transform.position = new Vector2(0, 0);
             speed = 0;
             m1.scoreUpdate1();
+            Turns.Restart();
             Debug.Log("GOAL LEFT PLAYER WINS!");
             
         }
@@ -113,6 +121,18 @@ public class Ball : MonoBehaviour
         */
     }
 
+    public static void Change_speed()
+    {
+        if (speed < 1)
+        {
+            speed = 0f;
+        }
+        else
+        {
+            speed -= 1f;
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Wall")
@@ -122,7 +142,7 @@ public class Ball : MonoBehaviour
             if (isRight && balldirection.x > 0)
             {
                 balldirection.x = -balldirection.x;
-                if(speed < 1)
+                if (speed < 1)
                 {
                     speed = 0f;
                 }
@@ -130,7 +150,7 @@ public class Ball : MonoBehaviour
                 {
                     speed -= 1f;
                 }
-                
+
             }
 
             if (!isRight && balldirection.x < 0)
@@ -147,6 +167,19 @@ public class Ball : MonoBehaviour
 
             }
         }
+
+        if (other.tag == "Wall")
+        {
+            if (speed < 1)
+            {
+                speed = 0f;
+            }
+            else
+            {
+                speed -= 1f;
+            }
+        }
+
     }
 
 }
