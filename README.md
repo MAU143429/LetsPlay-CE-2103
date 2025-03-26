@@ -2,7 +2,7 @@
 
 ## 📘 Overview
 
-This repository contains the client-side interface and mini-games for the project Let's Play, developed for the course CE2103 — Algoritmos y Estructura de Datos II at Instituto Tecnológico de Costa Rica.
+This repository contains the client-side interface and mini-games for the project Let's Play, developed for the course CE-2103 — Algoritmos y Estructura de Datos II at Instituto Tecnológico de Costa Rica.
 
 The project includes two games:
 - **BP Game**: A table-top strategy game with obstacles and scoring logic
